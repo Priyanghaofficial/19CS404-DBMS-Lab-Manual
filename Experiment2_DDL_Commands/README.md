@@ -102,160 +102,189 @@ CREATE TABLE Table_Name (
   col_name3 data_type DEFAULT 'default_value'
 );
 ```
-
 **Question 1**
 --
-<img width="736" height="305" alt="image" src="https://github.com/user-attachments/assets/fffdf580-dec7-4b9b-adf6-7aff8eb9fc8e" />
-
-
-```
-CREATE TABLE Products
-(
-ProductID PRIMARY KEY,
-ProductName TEXT NOT NULL,
-Price REAL CHECK(Price>0),
-Stock INTEGER CHECK(Stock>=0)
-)
-
-```
-
-**Output:**
-
-<img width="1067" height="181" alt="image" src="https://github.com/user-attachments/assets/f0135fa3-9650-461f-8baf-2612558bb51e" />
-
-
-**Question 2**
-
-<img width="894" height="447" alt="image" src="https://github.com/user-attachments/assets/18a6b1f6-a43c-4891-b630-6d2791a7bc20" />
-
-```
-ALTER TABLE customer ADD COLUMN email VARCHAR(100)
-
-```
-
-**Output:**
-
-<img width="1328" height="279" alt="image" src="https://github.com/user-attachments/assets/1ef7797d-e6a4-4c10-b18b-8bfd4edb783e" />
-
-
-**Question 3**
-
-<img width="1159" height="325" alt="image" src="https://github.com/user-attachments/assets/b0208327-70e3-4621-92e2-fd64410c0652" />
-
-```
-INSERT INTO Customers(CustomerID ,Name,Address ,City,ZipCode)
-VALUES(306 ,'Diana Prince',  'Themyscira',NULL,NULL);
-INSERT INTO Customers(CustomerID ,Name,Address ,City,ZipCode)
-VALUES(307,'Bruce Wayne',   'Wayne Manor',  'Gotham',10007);
-INSERT INTO Customers(CustomerID ,Name,Address ,City,ZipCode)
-VALUES(308,'Peter Parker',  'Queens',NULL, 11375);
-```
-
-**Output:**
-
-<img width="1003" height="189" alt="image" src="https://github.com/user-attachments/assets/94e99cf6-604d-4ddf-a03d-5129dd9cdb8c" />
-
-
-**Question 4**
-<img width="1031" height="233" alt="image" src="https://github.com/user-attachments/assets/8d937bc8-7fd7-4d56-b9a5-e7774368f548" />
-
-
-```
-CREATE TABLE Products 
-(
-ProductID INTEGER PRIMARY KEY,
-ProductName TEXT UNIQUE NOT NULL,
-Price REAL CHECK (Price>0),
-StockQuantity INTEGER CHECK (StockQuantity>0)
-)
-```
-
-**Output:**
-
-<img width="1295" height="184" alt="image" src="https://github.com/user-attachments/assets/f39c2022-b506-47b4-8393-6b8afe0950f5" />
-
-
-**Question 5**
----
--- Paste Question 5 here
+Create a new table named item with the following specifications and constraints:
+1. item_id as TEXT and as primary key.
+2. item_desc as TEXT.
+3. rate as INTEGER.
+4. icom_id as TEXT with a length of 4.
+5. icom_id is a foreign key referencing com_id in the company table.
+6. The foreign key should cascade updates and deletes.
+7. item_desc and rate should not accept NULL.
 
 ```sql
--- Paste your SQL code below for Question 5
-```
-
-**Output:**
-
-![Output5](output.png)
-
-**Question 6**
-<img width="724" height="149" alt="image" src="https://github.com/user-attachments/assets/7a0e583d-ca1a-487a-9012-c68c0bbe4ac6" />
-
-```
-create table contacts
-(
-contact_id INTEGER PRIMARY KEY,
-first_name TEXT NOT NULL,
-last_name TEXT NOT NULL,
-email TEXT,
-phone TEXT NOT NULL CHECK(LENGTH(phone)>=10)
-
-
+CREATE TABLE item(
+item_id TEXT,
+item_desc TEXT,
+rate INT,
+icom_id TEXT CHECK (LENGTH(icom_id)=4),
+FOREIGN KEY (icom_id) REFERENCES company (com_id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 ```
 
 **Output:**
 
-<img width="1311" height="227" alt="image" src="https://github.com/user-attachments/assets/a711d194-f2a8-495a-8c24-e3063eabc10e" />
+![image](https://github.com/user-attachments/assets/1774f61b-0ad2-42ac-bc90-d6898da90d77)
 
+**Question 2**
+---
+Insert all books from Out_of_print_books into Books
+Table attributes are ISBN, Title, Author, Publisher, YearPublished
+
+```sql
+INSERT INTO Books (ISBN, Title, Author, Publisher, YearPublished)
+SELECT ISBN, Title, Author, Publisher, YearPublished FROM Out_of_print_books;
+```
+
+**Output:**
+
+![image](https://github.com/user-attachments/assets/05087595-b4ac-48de-8a33-521e17655bcf)
+
+**Question 3**
+---
+Write a SQL query to Add a new column Country as text in the Student_details table.
+Sample table: Student_details
+
+```sql
+ALTER TABLE Student_details ADD Country TEXT;
+```
+
+**Output:**
+
+![image](https://github.com/user-attachments/assets/38ef77ff-2e53-49c0-bedf-dfb45a5792d0)
+
+**Question 4**
+---
+Create a table named Locations with the following columns:
+- LocationID as INTEGER
+- LocationName as TEXT
+- Address as TEXT
+
+```sql
+CREATE TABLE Locations(
+LocationID INTEGER,
+LocationName TEXT,
+Address TEXT
+);
+```
+
+**Output:**
+
+![image](https://github.com/user-attachments/assets/84a70964-fbd7-40c4-b3c1-9c911755227a)
+
+
+**Question 5**
+Insert a book with ISBN 978-1234567890, Title Data Science Essentials, Author Jane Doe, Publisher TechBooks, and Year 2024 into the Books table.
+
+```sql
+INSERT INTO Books (ISBN,Title,Author,Publisher,Year)
+VALUES ('978-1234567890','Data Science Essentials','Jane Doe','TechBooks',2024);
+```
+
+**Output:**
+
+![image](https://github.com/user-attachments/assets/a8b66909-54eb-4230-8331-75d1d019d542)
+
+**Question 6**
+---
+In the Student_details table, insert a student record where some fields are NULL, another record where all fields are filled without any NULL values, and a third record where some fields are filled, and others are left as NULL.
+
+```sql
+INSERT INTO Student_details (RollNo,Name,Gender,Subject,MARKS)
+VALUES (205,'Olivia Green','F',NULL,NULL),
+(207,'Liam Smith','M','Mathematics',85),
+(208,'Sophia Johnson','F','Science',NULL);
+```
+
+**Output:**
+
+![image](https://github.com/user-attachments/assets/3df68d8f-9f18-477e-a9e8-396c3d78ff85)
 
 **Question 7**
 ---
--- Paste Question 7 here
+Create a table named Bonuses with the following constraints:
+- BonusID as INTEGER should be the primary key.
+- EmployeeID as INTEGER should be a foreign key referencing Employees(EmployeeID).
+- BonusAmount as REAL should be greater than 0.
+- BonusDate as DATE.
+- Reason as TEXT should not be NULL.
 
 ```sql
--- Paste your SQL code below for Question 7
+CREATE TABLE Bonuses(
+BonusID INT PRIMARY KEY,
+EmployeeID INT,
+BonusAmount REAL,
+BonusDate DATE,
+Reason TEXT NOT NULL,
+FOREIGN KEY (EmployeeID) REFERENCES Employees (EmployeeID),
+CHECK (BonusAmount>0)
+);
 ```
 
 **Output:**
 
-![Output7](output.png)
+![image](https://github.com/user-attachments/assets/1968df0f-cc32-4e01-886e-77891ce00096)
 
 **Question 8**
 ---
--- Paste Question 8 here
+create a table named jobs including columns job_id, job_title, min_salary and max_salary, and make sure that, the default value for job_title is blank and min_salary is 8000 and max_salary is NULL will be entered automatically at the time of insertion if no value assigned for the specified columns.
 
 ```sql
--- Paste your SQL code below for Question 8
+CREATE TABLE jobs(
+job_id INTEGER,
+job_title TEXT DEFAULT 'black',
+min_salary INT DEFAULT 8000,
+max_salary INT DEFAULT NULL
+);
 ```
 
 **Output:**
 
-![Output8](output.png)
+![image](https://github.com/user-attachments/assets/b030eb34-2af0-48ab-aef2-19fd5cb15e1f)
 
 **Question 9**
 ---
--- Paste Question 9 here
+Write an SQL Query to add the attributes designation, net_salary, and dob to the Companies table with the following data types:
+- designation as VARCHAR(50)
+- net_salary as NUMBER
+- dob as DATE
 
 ```sql
--- Paste your SQL code below for Question 9
+ALTER TABLE Companies ADD designation varchar(50);
+ALTER TABLE Companies ADD net_salary number;
+ALTER TABLE Companies ADD dob date;
 ```
 
 **Output:**
 
-![Output9](output.png)
+![image](https://github.com/user-attachments/assets/2a20a718-9410-46ea-bb24-44066b1d1484)
 
 **Question 10**
 ---
--- Paste Question 10 here
+Create a table named Invoices with the following constraints:
+- InvoiceID as INTEGER should be the primary key.
+- InvoiceDate as DATE.
+- Amount as REAL should be greater than 0.
+- DueDate as DATE should be greater than the InvoiceDate.
+- OrderID as INTEGER should be a foreign key referencing Orders(OrderID).
 
 ```sql
--- Paste your SQL code below for Question 10
+CREATE TABLE Invoices(
+InvoiceID INTEGER PRIMARY KEY,
+InvoiceDate DATE,
+Amount REAL,
+DueDate DATE,
+OrderID INTEGER,
+FOREIGN KEY (OrderID) REFERENCES Orders (OrderID),
+CHECK (LENGTH(Amount)>0),
+CHECK (DueDate>InvoiceDate)
+);
 ```
 
 **Output:**
 
-![Output10](output.png)
-
+![image](https://github.com/user-attachments/assets/73e63eec-ec6c-4a3f-a1c9-c065057421c2)
 
 ## RESULT
 Thus, the SQL queries to implement different types of constraints and DDL commands have been executed successfully.
