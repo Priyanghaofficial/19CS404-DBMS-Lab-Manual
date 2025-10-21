@@ -105,51 +105,75 @@ CREATE TABLE Table_Name (
 
 **Question 1**
 --
--- Paste Question 1 here
+<img width="736" height="305" alt="image" src="https://github.com/user-attachments/assets/fffdf580-dec7-4b9b-adf6-7aff8eb9fc8e" />
 
-```sql
--- Paste your SQL code below for Question 1
+
+```
+CREATE TABLE Products
+(
+ProductID PRIMARY KEY,
+ProductName TEXT NOT NULL,
+Price REAL CHECK(Price>0),
+Stock INTEGER CHECK(Stock>=0)
+)
+
 ```
 
 **Output:**
 
-![Output1](output.png)
+<img width="1067" height="181" alt="image" src="https://github.com/user-attachments/assets/f0135fa3-9650-461f-8baf-2612558bb51e" />
+
 
 **Question 2**
----
--- Paste Question 2 here
 
-```sql
--- Paste your SQL code below for Question 2
+<img width="894" height="447" alt="image" src="https://github.com/user-attachments/assets/18a6b1f6-a43c-4891-b630-6d2791a7bc20" />
+
+```
+ALTER TABLE customer ADD COLUMN email VARCHAR(100)
+
 ```
 
 **Output:**
 
-![Output2](output.png)
+<img width="1328" height="279" alt="image" src="https://github.com/user-attachments/assets/1ef7797d-e6a4-4c10-b18b-8bfd4edb783e" />
+
 
 **Question 3**
----
--- Paste Question 3 here
 
-```sql
--- Paste your SQL code below for Question 3
+<img width="1159" height="325" alt="image" src="https://github.com/user-attachments/assets/b0208327-70e3-4621-92e2-fd64410c0652" />
+
+```
+INSERT INTO Customers(CustomerID ,Name,Address ,City,ZipCode)
+VALUES(306 ,'Diana Prince',  'Themyscira',NULL,NULL);
+INSERT INTO Customers(CustomerID ,Name,Address ,City,ZipCode)
+VALUES(307,'Bruce Wayne',   'Wayne Manor',  'Gotham',10007);
+INSERT INTO Customers(CustomerID ,Name,Address ,City,ZipCode)
+VALUES(308,'Peter Parker',  'Queens',NULL, 11375);
 ```
 
 **Output:**
 
-![Output3](output.png)
+<img width="1003" height="189" alt="image" src="https://github.com/user-attachments/assets/94e99cf6-604d-4ddf-a03d-5129dd9cdb8c" />
+
 
 **Question 4**
----
--- Paste Question 4 here
+<img width="1031" height="233" alt="image" src="https://github.com/user-attachments/assets/8d937bc8-7fd7-4d56-b9a5-e7774368f548" />
 
-```sql
--- Paste your SQL code below for Question 4
+
+```
+CREATE TABLE Products 
+(
+ProductID INTEGER PRIMARY KEY,
+ProductName TEXT UNIQUE NOT NULL,
+Price REAL CHECK (Price>0),
+StockQuantity INTEGER CHECK (StockQuantity>0)
+)
 ```
 
 **Output:**
 
-![Output4](output.png)
+<img width="1295" height="184" alt="image" src="https://github.com/user-attachments/assets/f39c2022-b506-47b4-8393-6b8afe0950f5" />
+
 
 **Question 5**
 ---
@@ -164,16 +188,25 @@ CREATE TABLE Table_Name (
 ![Output5](output.png)
 
 **Question 6**
----
--- Paste Question 6 here
+<img width="724" height="149" alt="image" src="https://github.com/user-attachments/assets/7a0e583d-ca1a-487a-9012-c68c0bbe4ac6" />
 
-```sql
--- Paste your SQL code below for Question 6
+```
+create table contacts
+(
+contact_id INTEGER PRIMARY KEY,
+first_name TEXT NOT NULL,
+last_name TEXT NOT NULL,
+email TEXT,
+phone TEXT NOT NULL CHECK(LENGTH(phone)>=10)
+
+
+);
 ```
 
 **Output:**
 
-![Output6](output.png)
+<img width="1311" height="227" alt="image" src="https://github.com/user-attachments/assets/a711d194-f2a8-495a-8c24-e3063eabc10e" />
+
 
 **Question 7**
 ---
