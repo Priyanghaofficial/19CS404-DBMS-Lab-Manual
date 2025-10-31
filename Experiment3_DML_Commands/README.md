@@ -189,5 +189,8 @@ from products;
 **COMPLETION STATUS**
 ![WhatsApp Image 2025-10-17 at 10 37 51 AM](https://github.com/user-attachments/assets/f0fb8d77-8271-43fd-a290-2d35a53a5794)
 
+<img width="1919" height="795" alt="image" src="https://github.com/user-attachments/assets/36c300f9-7db5-4e6f-bcdd-74b0f9efd8d7" />
+
+
 ## RESULT
 Thus, the SQL queries to implement DML commands have been executed successfully.
