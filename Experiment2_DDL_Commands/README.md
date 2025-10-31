@@ -286,5 +286,9 @@ CHECK (DueDate>InvoiceDate)
 
 ![image](https://github.com/user-attachments/assets/73e63eec-ec6c-4a3f-a1c9-c065057421c2)
 
+## SCORE:
+<img width="1919" height="795" alt="image" src="https://github.com/user-attachments/assets/2d3f4f8f-8ae5-40e3-a95e-88afa96d1eb9" />
+
+
 ## RESULT
 Thus, the SQL queries to implement different types of constraints and DDL commands have been executed successfully.
