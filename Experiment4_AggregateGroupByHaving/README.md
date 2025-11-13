@@ -157,5 +157,8 @@ SELECT category_id, COUNT(product_name) AS 'count(product_name)' FROM products G
 
 ![image](https://github.com/user-attachments/assets/4fbdd60e-5207-4bed-b62b-017161e6470d)
 
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f969e4a2-8b63-4d10-8d19-52aa9eeb2b21" />
+
+
 ## RESULT
 Thus, the SQL queries to implement aggregate functions, GROUP BY, and HAVING clause have been executed successfully.
