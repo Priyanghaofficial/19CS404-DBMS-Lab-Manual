@@ -1,6 +1,6 @@
 # Experiment 8: PL/SQL Cursor Programs
-### Name : SINGAMALA VENKATA SAI KUMAR REDDY
-### Reg No : 212223230208
+### Name : Priyangha G
+### Reg No : 212223040157
 ## AIM
 To write and execute PL/SQL programs using cursors and exception handling to manage runtime errors effectively and display appropriate messages.
 
